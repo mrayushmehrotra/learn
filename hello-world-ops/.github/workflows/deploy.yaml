@@ -1,0 +1,100 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run tests (optional)
+        run: npm test
+
+      - name: Build Docker image
+        run: docker build -t hello-world-ops:latest .
+
+      - name: Test Docker image locally
+        run: |
+          docker run -d --name test-app -p 8090:8090 hello-world-ops:latest
+          sleep 5
+          curl -f http://localhost:8090 || exit 1
+          docker stop test-app
+          docker rm test-app
+
+      # Optional: Push to Docker Hub (uncomment and configure if needed)
+      # - name: Login to Docker Hub
+      #   uses: docker/login-action@v2
+      #   with:
+      #     username: ${{ secrets.DOCKER_USERNAME }}
+      #     password: ${{ secrets.DOCKER_PASSWORD }}
+      #
+      # - name: Push Docker image
+      #   run: |
+      #     docker tag hello-world-ops:latest ${{ secrets.DOCKER_USERNAME }}/hello-world-ops:latest
+      #     docker push ${{ secrets.DOCKER_USERNAME }}/hello-world-ops:latest
+
+      # Kubernetes Deployment (Only runs if cluster is configured)
+      - name: Set up kubectl
+        uses: azure/setup-kubectl@v3
+        with:
+          version: 'latest'
+
+      - name: Check if Kubernetes cluster is available
+        id: check-k8s
+        run: |
+          if kubectl cluster-info &> /dev/null; then
+            echo "cluster_available=true" >> $GITHUB_OUTPUT
+          else
+            echo "cluster_available=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Deploy to Kubernetes (if cluster available)
+        if: steps.check-k8s.outputs.cluster_available == 'true'
+        run: |
+          echo "🚀 Deploying to Kubernetes cluster..."
+          
+          # Create namespace
+          kubectl apply -f k8s/namespace.yaml
+          
+          # Apply deployment and service
+          kubectl apply -f k8s/deployment.yaml
+          kubectl apply -f k8s/service.yaml
+          
+          # Wait for deployment to be ready
+          kubectl rollout status deployment/hello-world-ops -n hello-world-ops --timeout=300s
+          
+          # Get service info
+          kubectl get svc -n hello-world-ops
+
+      - name: Verify deployment (if cluster available)
+        if: steps.check-k8s.outputs.cluster_available == 'true'
+        run: |
+          # Check if pods are running
+          kubectl get pods -n hello-world-ops
+          
+          # Check deployment status
+          kubectl get deployment -n hello-world-ops
+
+      - name: Skip Kubernetes deployment
+        if: steps.check-k8s.outputs.cluster_available == 'false'
+        run: |
+          echo "⚠️ No Kubernetes cluster detected. Skipping deployment."
+          echo "💡 To deploy to Kubernetes:"
+          echo "   1. Set up a cluster (minikube, kind, or cloud provider)"
+          echo "   2. Configure kubectl context"
+          echo "   3. Add cluster credentials as GitHub secrets"
+          echo "   4. Re-run this workflow"

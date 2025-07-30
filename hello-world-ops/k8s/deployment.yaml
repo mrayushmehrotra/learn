@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-world-ops
+  namespace: hello-world-ops
+  labels:
+    app: hello-world-ops
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: hello-world-ops
+  template:
+    metadata:
+      labels:
+        app: hello-world-ops
+    spec:
+      containers:
+      - name: hello-world-ops
+        image: hello-world-ops:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 8090
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "50m"
+          limits:
+            memory: "128Mi"
+            cpu: "100m"
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 8090
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 8090
+          initialDelaySeconds: 5
+          periodSeconds: 5 

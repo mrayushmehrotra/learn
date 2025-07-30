@@ -1,0 +1,39 @@
+{
+  "name": "leaderboard-app",
+  "version": "1.0.0",
+  "description": "Full-stack leaderboard application with React and Node.js",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:client": "cd Frontend/leaderboard-app && npm run dev",
+    "dev:server": "cd server/server/src && node server.js",
+    "build": "cd Frontend/leaderboard-app && npm run build",
+    "build:server": "cd server && npm run build",
+    "start": "cd server/server/src && node server.js",
+    "test": "npm run test:client && npm run test:server",
+    "test:client": "cd client && npm test",
+    "test:server": "cd server && npm test",
+    "lint": "npm run lint:client && npm run lint:server",
+    "lint:client": "cd client && npm run lint",
+    "lint:server": "cd server && npm run lint",
+    "format": "npm run format:client && npm run format:server",
+    "format:client": "cd client && npm run format",
+    "format:server": "cd server && npm run format",
+    "install:all": "npm install && cd client && npm install && cd ../server && npm install",
+    "clean": "rm -rf node_modules client/node_modules server/node_modules client/dist server/dist"
+  },
+  "keywords": [
+    "leaderboard",
+    "react",
+    "nodejs",
+    "mongodb",
+    "express",
+    "typescript"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "vite": "^7.0.5"
+  }
+}
