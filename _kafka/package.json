@@ -1,0 +1,15 @@
+{
+  "name": "_kafka",
+  "version": "1.0.0",
+  "description": "<!-- run zookeeper in the docker  -->",
+  "main": "index.js",
+  "scripts": {
+    "dev": "pnpx nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "kafkajs": "^2.2.4"
+  }
+}
