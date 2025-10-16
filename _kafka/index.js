@@ -1,16 +1,10 @@
-const { Kafka } = require("kafkajs");
-
-const kafka = new Kafka({
-  clientId: "my-app",
-  brokers: ["10.19.30.20:9092"],
-});
-
+import { kafka } from "./client.js";
 async function init() {
   const admin = kafka.admin();
-  admin.connect();
+  await admin.connect();
   console.log("Admin connected successfully");
 
-  admin.createTopics({
+  await admin.createTopics({
     topics: [
       {
         topic: "rider-updates",
@@ -18,8 +12,10 @@ async function init() {
       },
     ],
   });
+  console.log("Topic created successfully");
+
   await admin.disconnect();
-  console.log("admin disconnecting");
+  console.log("Admin disconnected");
 }
 
 init();

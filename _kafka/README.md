@@ -10,3 +10,7 @@ docker run -p 9093:9092 \
 -e KAFKA_ADVERTISED_LISTENER=PLAINTEXT://10.19.30.255:9092 \
 -e KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR=1 \
 confluentinc/cp-kafka
+
+as you can see in the image,
+
+one is producer can only 2 partition and 2 consumer attached to each other, so self balancing makes the kafka throw single message to single partition
