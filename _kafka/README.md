@@ -14,3 +14,5 @@ confluentinc/cp-kafka
 as you can see in the image,
 
 one is producer can only 2 partition and 2 consumer attached to each other, so self balancing makes the kafka throw single message to single partition
+
+**
