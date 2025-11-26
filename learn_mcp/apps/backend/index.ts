@@ -21,7 +21,7 @@ class UsersServer {
         capabilities: {
           tools: {},
         },
-      }
+      },
     );
 
     this.setupToolHandlers();

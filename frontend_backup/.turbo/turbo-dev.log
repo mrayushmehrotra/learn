@@ -1,0 +1,23 @@
+
+> stocks_app@0.1.0 dev /home/ayush/open/Signalist/apps/frontend_backup
+> next dev --turbopack
+
+ [33m[1m⚠[22m[39m Warning: Next.js inferred your workspace root, but it may not be correct.
+ We detected multiple lockfiles and selected the directory of /home/ayush/open/Signalist/pnpm-lock.yaml as the root directory.
+ To silence this warning, set `turbopack.root` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack#root-directory for more information.
+ Detected additional lockfiles: 
+   * /home/ayush/open/Signalist/apps/frontend_backup/package-lock.json
+
+ [33m[1m⚠[22m[39m Port 3000 is in use by process 12637, using available port 3001 instead.
+   [1m[38;2;173;127;168m▲ Next.js 15.5.2[39m[22m (Turbopack)
+   - Local:        http://localhost:3001
+   - Network:      http://10.135.98.20:3001
+   - Environments: .env
+
+ [32m[1m✓[22m[39m Starting...
+ [32m[1m✓[22m[39m Ready in 1520ms
+ [37m[1m○[22m[39m Compiling /sign-up ...
+ [32m[1m✓[22m[39m Compiled /sign-up in 8.1s
+Connected to database development - mongodb+srv://ayushmehrotraisthedev:ayushmehrotraisthedev@cluster0.luggmsv.mongodb.net/signalist-db?retryWrites=true&w=majority
+ GET /sign-up [32m200[39m in 9548ms
