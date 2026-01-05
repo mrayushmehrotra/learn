@@ -1,0 +1,2 @@
+// Models are defined in separate files (user.prisma, todo.prisma)
+// Generator and datasource are in base.prisma

@@ -1,0 +1,47 @@
+enum Priority {
+    LOW
+    MEDIUM
+    HIGH
+    URGENT
+}
+
+enum TodoStatus {
+    PENDING
+    IN_PROGRESS
+    COMPLETED
+    CANCELLED
+}
+
+model Todo {
+    id          String     @id @default(cuid())
+    title       String
+    description String?
+    priority    Priority   @default(MEDIUM)
+    status      TodoStatus @default(PENDING)
+    dueDate     DateTime?
+    createdAt   DateTime   @default(now())
+    updatedAt   DateTime   @updatedAt
+
+    // Relation to User
+    userId String
+    user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+    // Subtasks as embedded documents (MongoDB)
+    subtasks Subtask[]
+
+    @@index([userId])
+    @@index([status])
+    @@index([dueDate])
+}
+
+model Subtask {
+    id          String  @id @default(cuid())
+    title       String
+    isCompleted Boolean @default(false)
+
+    // Relation to parent Todo
+    todoId String
+    todo   Todo   @relation(fields: [todoId], references: [id], onDelete: Cascade)
+
+    @@index([todoId])
+}
