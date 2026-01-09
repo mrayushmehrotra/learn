@@ -20,6 +20,7 @@
     "lucide-react": "^0.545.0",
     "react": "^19",
     "react-dom": "^19",
+    "react-hook-form": "^7.70.0",
     "superjson": "^2.2.6",
     "tailwind-merge": "^3.3.1"
   },

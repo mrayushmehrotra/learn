@@ -43,4 +43,8 @@ export const UserProdecure = {
       return user;
     }
   }),
+  getAllUsers: publicProcedure.query(async () => {
+    const user = await User.getAllUsers();
+    return user;
+  }),
 };

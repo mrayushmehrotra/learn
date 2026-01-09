@@ -26,3 +26,4 @@ export interface UserManager {
   // FIXME: add the TODO type here
   getAllTodos(): Promise<any>;
 }
+

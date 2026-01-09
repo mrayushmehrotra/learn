@@ -26,3 +26,4 @@ export interface ApiError {
   code: string;
   httpStatus: number;
 }
+

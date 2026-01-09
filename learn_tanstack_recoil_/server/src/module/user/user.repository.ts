@@ -2,7 +2,7 @@
 
 import { prisma } from "../../db/prismaClient";
 import type { UserManager, userSchema } from "./user.dto";
-import type { User as PrismaUser } from "@prisma/client";
+import type { User as PrismaUser, User } from "@prisma/client";
 
 // Convert Prisma user to our userSchema
 const toUserSchema = (prismaUser: PrismaUser) => ({
@@ -65,5 +65,10 @@ export class UserClassRepository implements UserManager {
   async getAllTodos(): Promise<any> {
     return await prisma.todo.findMany();
   }
-}
 
+  async getAllUsers() {
+    const data = await prisma.user.findMany();
+    console.log("data", data);
+    return data.map(toUserSchema);
+  }
+}
