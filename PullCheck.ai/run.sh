@@ -19,10 +19,18 @@ echo ""
 echo -e "${YELLOW}📦 Checking MongoDB...${NC}"
 if docker ps | grep -q pullcheck-mongo; then
     echo -e "${GREEN}✓ MongoDB is already running${NC}"
-else
-    echo -e "${YELLOW}Starting MongoDB via Docker...${NC}"
-    docker start pullcheck-mongo 2>/dev/null || docker run -d --name pullcheck-mongo -p 27017:27017 mongo:7
+elif docker ps -a | grep -q pullcheck-mongo; then
+    echo -e "${YELLOW}Starting existing MongoDB container...${NC}"
+    docker start pullcheck-mongo
     echo -e "${GREEN}✓ MongoDB started${NC}"
+else
+    echo -e "${YELLOW}Creating and starting new MongoDB container...${NC}"
+    docker run -d \
+        --name pullcheck-mongo \
+        -p 27017:27017 \
+        -v pullcheck_mongodb_data:/data/db \
+        mongo:latest
+    echo -e "${GREEN}✓ MongoDB container created and started${NC}"
 fi
 
 echo ""
