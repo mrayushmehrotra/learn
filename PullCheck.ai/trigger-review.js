@@ -1,0 +1,1 @@
+// This is a test file to trigger PullCheck AI review\nfunction add(a, b) {\n  return a + b;\n}\n\n// Poorly written code to see if AI catches it\nfunction badFunc() {\n  var x = 10\n  if (x == "10") {\n    console.log("This is a bad practice");\n  }\n  return x;\n}
