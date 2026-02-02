@@ -1,0 +1,4 @@
+2026-02-02 12:46:30 | ERROR    | trading_bot | Validation test 'Invalid Symbol' passed: Symbol INVALID123 not found on exchange
+2026-02-02 12:46:30 | ERROR    | trading_bot | Validation test 'Invalid Side' passed: Invalid side: INVALID. Must be one of ['BUY', 'SELL']
+2026-02-02 12:46:30 | ERROR    | trading_bot | Validation test 'Negative Quantity' passed: Quantity must be positive. Got: -0.001
+2026-02-02 12:46:30 | ERROR    | trading_bot | Validation test 'Missing Price for LIMIT' passed: Price is required for LIMIT orders

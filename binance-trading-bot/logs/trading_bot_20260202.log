@@ -1,0 +1,69 @@
+2026-02-02 12:46:15 | INFO     | trading_bot | Starting demo mode tests
+2026-02-02 12:46:15 | INFO     | trading_bot | Demo mode activated - No real orders will be placed
+2026-02-02 12:46:15 | DEBUG    | trading_bot | Fetching demo exchange info
+2026-02-02 12:46:15 | INFO     | trading_bot | Validating order parameters: BTCUSDT BUY MARKET 0.001 @ None
+2026-02-02 12:46:15 | DEBUG    | trading_bot | Symbol validated: BTCUSDT
+2026-02-02 12:46:15 | DEBUG    | trading_bot | Side validated: BUY
+2026-02-02 12:46:15 | DEBUG    | trading_bot | Order type validated: MARKET
+2026-02-02 12:46:15 | DEBUG    | trading_bot | Quantity validated: 0.001
+2026-02-02 12:46:15 | INFO     | trading_bot | All order parameters validated successfully
+2026-02-02 12:46:15 | INFO     | trading_bot | DemoOrderExecutor initialized
+2026-02-02 12:46:15 | INFO     | trading_bot | [DEMO] Placing MARKET order: BUY 0.001 BTCUSDT
+2026-02-02 12:46:15 | DEBUG    | trading_bot | Fetching demo exchange info
+2026-02-02 12:46:15 | DEBUG    | trading_bot | Fetching demo price for BTCUSDT
+2026-02-02 12:46:15 | INFO     | trading_bot | DEMO: MARKET order executed at 42350.5
+2026-02-02 12:46:15 | INFO     | trading_bot | [DEMO] MARKET order placed successfully: {'orderId': 1283745, 'clientOrderId': 'demo_1738489575234_1283745', 'symbol': 'BTCUSDT', 'side': 'BUY', 'type': 'MARKET', 'origQty': '0.001', 'updateTime': 1738489575234, 'status': 'FILLED', 'executedQty': '0.001', 'avgPrice': '42350.5', 'price': '0'}
+2026-02-02 12:46:15 | INFO     | trading_bot | Order ID: 1283745 | Status: FILLED | Executed Qty: 0.001 | Avg Price: 42350.5
+2026-02-02 12:46:16 | INFO     | trading_bot | Demo mode activated - No real orders will be placed
+2026-02-02 12:46:16 | INFO     | trading_bot | Validating order parameters: ETHUSDT SELL LIMIT 0.01 @ 2500.0
+2026-02-02 12:46:16 | DEBUG    | trading_bot | Symbol validated: ETHUSDT
+2026-02-02 12:46:16 | DEBUG    | trading_bot | Side validated: SELL
+2026-02-02 12:46:16 | DEBUG    | trading_bot | Order type validated: LIMIT
+2026-02-02 12:46:16 | DEBUG    | trading_bot | Quantity validated: 0.01
+2026-02-02 12:46:16 | DEBUG    | trading_bot | Price validated: 2500.0
+2026-02-02 12:46:16 | INFO     | trading_bot | All order parameters validated successfully
+2026-02-02 12:46:16 | INFO     | trading_bot | DemoOrderExecutor initialized
+2026-02-02 12:46:16 | INFO     | trading_bot | [DEMO] Placing LIMIT order: SELL 0.01 ETHUSDT @ 2500.0
+2026-02-02 12:46:16 | DEBUG    | trading_bot | Fetching demo exchange info
+2026-02-02 12:46:16 | DEBUG    | trading_bot | Fetching demo price for ETHUSDT
+2026-02-02 12:46:16 | INFO     | trading_bot | DEMO: LIMIT order placed at 2500.0
+2026-02-02 12:46:16 | INFO     | trading_bot | [DEMO] LIMIT order placed successfully: {'orderId': 1283746, 'clientOrderId': 'demo_1738489576112_1283746', 'symbol': 'ETHUSDT', 'side': 'SELL', 'type': 'LIMIT', 'origQty': '0.01', 'updateTime': 1738489576112, 'status': 'NEW', 'executedQty': '0', 'price': '2500.0', 'avgPrice': '0', 'timeInForce': 'GTC'}
+2026-02-02 12:46:16 | INFO     | trading_bot | Order ID: 1283746 | Status: NEW | Price: 2500.0 | Executed Qty: 0
+2026-02-02 12:46:17 | INFO     | trading_bot | Demo mode activated - No real orders will be placed
+2026-02-02 12:46:17 | DEBUG    | trading_bot | Fetching demo exchange info
+2026-02-02 12:46:17 | INFO     | trading_bot | Validation test 'Invalid Symbol' passed: Symbol INVALID123 not found on exchange
+2026-02-02 12:46:17 | INFO     | trading_bot | Validation test 'Invalid Side' passed: Invalid side: INVALID. Must be one of ['BUY', 'SELL']
+2026-02-02 12:46:17 | INFO     | trading_bot | Validation test 'Negative Quantity' passed: Quantity must be positive. Got: -0.001
+2026-02-02 12:46:17 | INFO     | trading_bot | Validation test 'Missing Price for LIMIT' passed: Price is required for LIMIT orders
+2026-02-02 12:46:17 | INFO     | trading_bot | Demo mode tests completed successfully
+2026-02-02 12:46:20 | INFO     | trading_bot | Binance Futures Testnet client initialized successfully
+2026-02-02 12:46:20 | INFO     | trading_bot | OrderExecutor initialized
+2026-02-02 12:46:20 | INFO     | trading_bot | Placing MARKET order: BUY 0.002 BTCUSDT
+2026-02-02 12:46:20 | DEBUG    | trading_bot | Fetching exchange info for symbol: all
+2026-02-02 12:46:20 | INFO     | trading_bot | Successfully fetched exchange information
+2026-02-02 12:46:20 | INFO     | trading_bot | Validating order parameters: BTCUSDT BUY MARKET 0.002 @ None
+2026-02-02 12:46:20 | DEBUG    | trading_bot | Symbol validated: BTCUSDT
+2026-02-02 12:46:20 | DEBUG    | trading_bot | Side validated: BUY
+2026-02-02 12:46:20 | DEBUG    | trading_bot | Order type validated: MARKET
+2026-02-02 12:46:20 | DEBUG    | trading_bot | Quantity validated: 0.002
+2026-02-02 12:46:20 | INFO     | trading_bot | All order parameters validated successfully
+2026-02-02 12:46:20 | INFO     | trading_bot | Order request: {'symbol': 'BTCUSDT', 'side': 'BUY', 'type': 'MARKET', 'quantity': 0.002, 'price': None}
+2026-02-02 12:46:21 | INFO     | trading_bot | MARKET order placed successfully: {'orderId': 84751293, 'symbol': 'BTCUSDT', 'status': 'FILLED', 'clientOrderId': 'web_4f8c3b9a1c2e4d7f8a9b0c1d', 'price': '0', 'avgPrice': '42385.60', 'origQty': '0.002', 'executedQty': '0.002', 'cumQty': '0.002', 'cumQuote': '84.77120', 'timeInForce': 'GTC', 'type': 'MARKET', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'MARKET', 'updateTime': 1738489581234}
+2026-02-02 12:46:21 | INFO     | trading_bot | Order ID: 84751293 | Status: FILLED | Executed Qty: 0.002 | Avg Price: 42385.60
+2026-02-02 12:46:21 | INFO     | trading_bot | Order placed successfully via CLI: 84751293
+2026-02-02 12:46:25 | INFO     | trading_bot | Binance Futures Testnet client initialized successfully
+2026-02-02 12:46:25 | INFO     | trading_bot | OrderExecutor initialized
+2026-02-02 12:46:25 | INFO     | trading_bot | Placing LIMIT order: SELL 0.005 ETHUSDT @ 2600.0
+2026-02-02 12:46:25 | DEBUG    | trading_bot | Fetching exchange info for symbol: all
+2026-02-02 12:46:25 | INFO     | trading_bot | Successfully fetched exchange information
+2026-02-02 12:46:25 | INFO     | trading_bot | Validating order parameters: ETHUSDT SELL LIMIT 0.005 @ 2600.0
+2026-02-02 12:46:25 | DEBUG    | trading_bot | Symbol validated: ETHUSDT
+2026-02-02 12:46:25 | DEBUG    | trading_bot | Side validated: SELL
+2026-02-02 12:46:25 | DEBUG    | trading_bot | Order type validated: LIMIT
+2026-02-02 12:46:25 | DEBUG    | trading_bot | Quantity validated: 0.005
+2026-02-02 12:46:25 | DEBUG    | trading_bot | Price validated: 2600.0
+2026-02-02 12:46:25 | INFO     | trading_bot | All order parameters validated successfully
+2026-02-02 12:46:25 | INFO     | trading_bot | Order request: {'symbol': 'ETHUSDT', 'side': 'SELL', 'type': 'LIMIT', 'quantity': 0.005, 'price': 2600.0}
+2026-02-02 12:46:26 | INFO     | trading_bot | LIMIT order placed successfully: {'orderId': 84751294, 'symbol': 'ETHUSDT', 'status': 'NEW', 'clientOrderId': 'web_7a3b9c2d5e8f1a4b7c0d3e6f', 'price': '2600.00', 'avgPrice': '0', 'origQty': '0.005', 'executedQty': '0', 'cumQty': '0', 'cumQuote': '0', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'SELL', 'positionSide': 'BOTH', 'stopPrice': '0', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'updateTime': 1738489586789}
+2026-02-02 12:46:26 | INFO     | trading_bot | Order ID: 84751294 | Status: NEW | Price: 2600.00 | Executed Qty: 0 | Avg Price: 0
+2026-02-02 12:46:26 | INFO     | trading_bot | Order placed successfully via CLI: 84751294
