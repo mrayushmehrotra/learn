@@ -1,0 +1,4 @@
+.cache/
+.indstocks_token
+__pycache__/
+venv/

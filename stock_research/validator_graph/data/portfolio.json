@@ -1,0 +1,112 @@
+{
+  "default": {
+    "portfolio_id": "default",
+    "name": "Indian Large-Cap Growth Portfolio",
+    "mandate": "growth",
+    "sector_caps": {
+      "Technology": 0.3,
+      "Financials": 0.35,
+      "Energy": 0.2,
+      "Healthcare": 0.15,
+      "Consumer Staples": 0.2,
+      "Telecom": 0.15,
+      "Industrials": 0.15
+    },
+    "country_caps": {
+      "India": 0.9,
+      "US": 0.2
+    },
+    "positions": [
+      {
+        "ticker": "RELIANCE.NS",
+        "shares": 100,
+        "avg_price": 2500.0,
+        "sector": "Energy",
+        "country": "India",
+        "role": "core",
+        "purchase_date": ""
+      },
+      {
+        "ticker": "TCS.NS",
+        "shares": 50,
+        "avg_price": 3500.0,
+        "sector": "Technology",
+        "country": "India",
+        "role": "core",
+        "purchase_date": ""
+      },
+      {
+        "ticker": "HDFCBANK.NS",
+        "shares": 200,
+        "avg_price": 1600.0,
+        "sector": "Financials",
+        "country": "India",
+        "role": "core",
+        "purchase_date": ""
+      },
+      {
+        "ticker": "INFY.NS",
+        "shares": 150,
+        "avg_price": 1800.0,
+        "sector": "Technology",
+        "country": "India",
+        "role": "core",
+        "purchase_date": ""
+      },
+      {
+        "ticker": "ICICIBANK.NS",
+        "shares": 300,
+        "avg_price": 1100.0,
+        "sector": "Financials",
+        "country": "India",
+        "role": "core",
+        "purchase_date": ""
+      },
+      {
+        "ticker": "HINDUNILVR.NS",
+        "shares": 80,
+        "avg_price": 2500.0,
+        "sector": "Consumer Staples",
+        "country": "India",
+        "role": "core",
+        "purchase_date": ""
+      },
+      {
+        "ticker": "ITC.NS",
+        "shares": 400,
+        "avg_price": 450.0,
+        "sector": "Consumer Staples",
+        "country": "India",
+        "role": "core",
+        "purchase_date": ""
+      },
+      {
+        "ticker": "SBIN.NS",
+        "shares": 500,
+        "avg_price": 600.0,
+        "sector": "Financials",
+        "country": "India",
+        "role": "core",
+        "purchase_date": ""
+      },
+      {
+        "ticker": "BHARTIARTL.NS",
+        "shares": 200,
+        "avg_price": 1200.0,
+        "sector": "Telecom",
+        "country": "India",
+        "role": "core",
+        "purchase_date": ""
+      },
+      {
+        "ticker": "LT.NS",
+        "shares": 100,
+        "avg_price": 3400.0,
+        "sector": "Industrials",
+        "country": "India",
+        "role": "core",
+        "purchase_date": ""
+      }
+    ]
+  }
+}
